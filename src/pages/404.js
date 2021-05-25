@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { headData } from '../mock/data';
 import '../style/main.scss';
 
-export default () => {
+export default function NotFound() {
   const { lang } = headData;
 
   return (
@@ -40,4 +40,4 @@ export default () => {
       </section>
     </>
   );
-};
+}
