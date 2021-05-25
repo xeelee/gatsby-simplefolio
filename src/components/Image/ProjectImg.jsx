@@ -7,7 +7,7 @@ const ProjectImg = ({ filename, alt }) => (
   <StaticQuery
     query={graphql`
       {
-        images: allFile {
+        images: allFile(filter: { ext: { ne: ".js" } }) {
           edges {
             node {
               relativePath
