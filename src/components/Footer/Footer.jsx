@@ -8,7 +8,7 @@ import { githubButtons } from '../../mock/data';
 
 const Footer = () => {
   const { footer } = useContext(PortfolioContext);
-  const { networks } = footer;
+  const { networks, prefix, subject } = footer;
   const { isEnabled } = githubButtons;
 
   return (
@@ -38,9 +38,9 @@ const Footer = () => {
         </div>
         <hr />
         <p className="footer__text">
-          © {new Date().getFullYear()} - Template developed by{' '}
+          © {new Date().getFullYear()} - {`${prefix || 'Template developed by'} `}
           <a href="https://github.com/cobidev" target="_blank" rel="noopener noreferrer">
-            Jacobo Martínez
+            {subject || 'Jacobo Martínez'}
           </a>
         </p>
 
