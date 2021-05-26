@@ -1,10 +1,17 @@
 import React, { useContext } from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-scroll';
-import PortfolioContext from '../../context/context';
+
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faItchIo, faGithub } from '@fortawesome/free-brands-svg-icons';
 import GithubButtons from '../GithubButtons/GithubButtons';
+import PortfolioContext from '../../context/context';
 
 import { githubButtons } from '../../mock/data';
+
+library.add(faItchIo, faGithub);
 
 const Footer = () => {
   const { footer } = useContext(PortfolioContext);
@@ -16,7 +23,7 @@ const Footer = () => {
       <Container>
         <span className="back-to-top">
           <Link to="hero" smooth duration={1000}>
-            <i className="fa fa-angle-up fa-2x" aria-hidden="true" />
+            <FontAwesomeIcon icon={faAngleUp} size="2x" />
           </Link>
         </span>
         <div className="social-links">
@@ -31,7 +38,7 @@ const Footer = () => {
                   target="_blank"
                   aria-label={name}
                 >
-                  <i className={`fa fa-${name || 'refresh'} fa-inverse`} />
+                  <FontAwesomeIcon icon={['fab', name]} />
                 </a>
               );
             })}
