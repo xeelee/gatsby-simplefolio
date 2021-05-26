@@ -41,7 +41,7 @@
   flex-direction: row;
   justify-content: center;
 
-  a {
+  svg {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -58,7 +58,7 @@
   }
 }
 
-.back-to-top i {
+.back-to-top svg {
   color: $white-color;
   margin: 1rem 0 $default-font-size;
   transition: all 0.2s ease-in;
